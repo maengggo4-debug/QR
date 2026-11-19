@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>통신 상담 창구</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{--navy:#2b3a67;--navy-d:#1f2a4d;--yellow:#ffd93b;--bg:#eef1f7;--ink:#1f2a44;--mute:#7a849c}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;justify-content:center;padding:18px;letter-spacing:-.02em}
+  .wrap{width:100%;max-width:420px;margin:auto}
+  .card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(31,42,77,.12)}
+
+  .hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:26px 22px 30px;position:relative}
+  .hero::after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(255,217,59,.18)}
+  .tag{display:inline-block;background:var(--yellow);color:var(--navy-d);font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:14px;position:relative;z-index:1}
+  .hero h1{font-size:25px;font-weight:800;line-height:1.35;position:relative;z-index:1}
+  .hero p{font-size:14px;font-weight:400;opacity:.8;margin-top:8px;position:relative;z-index:1}
+
+  .body{padding:22px 18px 20px}
+  .label{font-size:13px;font-weight:600;color:var(--mute);margin:0 4px 12px}
+
+  a.btn{display:flex;align-items:center;gap:14px;text-decoration:none;border-radius:18px;padding:18px 16px;margin-bottom:12px;transition:transform .12s}
+  a.btn:active{transform:scale(.97)}
+  .ico{flex:0 0 46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+  .ico svg{width:24px;height:24px}
+  .txt{flex:1;min-width:0}
+  .txt b{display:block;font-size:18px;font-weight:700;margin-bottom:3px}
+  .txt span{font-size:13px;font-weight:400;opacity:.8}
+  .arrow{font-size:22px;font-weight:300;opacity:.6}
+
+  .call{background:var(--navy);color:#fff;box-shadow:0 6px 14px rgba(43,58,103,.28)}
+  .call .ico{background:rgba(255,255,255,.16)}
+  .sms{background:var(--yellow);color:var(--navy-d);box-shadow:0 6px 14px rgba(255,217,59,.4)}
+  .sms .ico{background:rgba(31,42,77,.1)}
+
+  .preview{margin-top:18px;background:#f6f8fc;border-radius:14px;padding:13px 14px;font-size:12.5px;line-height:1.6;color:var(--mute)}
+  .preview em{display:block;font-style:normal;font-weight:600;color:var(--ink);margin-bottom:3px}
+  .foot{text-align:center;font-size:11.5px;color:var(--mute);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="hero">
+      <span class="tag" id="tag">리치안 오피스텔 입주자 전용</span>
+      <h1>통신 혜택 상담</h1>
+      <p>편한 방법으로 문의하세요</p>
+    </div>
+
+    <div class="body">
+      <p class="label">문의 방법 선택</p>
+
+      <a class="btn call" href="tel:0316551000">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div class="txt"><b>전화 문의</b><span>031-655-1000 · 바로 연결</span></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a id="sms" class="btn sms"
+         href="sms:01067897628?&body=%5B%EB%A6%AC%EC%B9%98%EC%95%88%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%2F%2000%EB%8F%99%20%2F%2000%ED%98%B8%5D%20%EC%9D%B8%ED%84%B0%EB%84%B7%20%2B%20TV%20%EA%B0%80%EC%9E%85%20%EB%AC%B8%EC%9D%98%ED%95%A9%EB%8B%88%EB%8B%A4.">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1f2a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.7-.8L3 21l1.9-5.1A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        </div>
+        <div class="txt"><b>문자 문의</b><span>문구 자동 입력 · 동/호수만 고쳐서 전송</span></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="preview">
+        <em>자동 입력되는 문자 내용</em>
+        <span id="preview">[리치안 오피스텔 / 00동 / 00호] 인터넷 + TV 가입 문의합니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// 주소 뒤에 ?b=건물명 을 붙이면 문자 본문과 상단 태그가 해당 건물명으로 바뀜 (예: ?b=리치안)
+(function(){
+  var b = new URLSearchParams(location.search).get('b');
+  if(!b) return;
+  var body = '[' + b + ' / 00동 / 00호] 인터넷 + TV 가입 문의합니다.';
+  document.getElementById('preview').textContent = body;
+  document.getElementById('sms').href = 'sms:01067897628?&body=' + encodeURIComponent(body);
+  document.getElementById('tag').textContent = b + ' 입주자 전용';
+})();
+</script>
+</body>
+</html>
